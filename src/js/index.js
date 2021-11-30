@@ -24,3 +24,14 @@ addGlobalEventListener("click", "button", e => {
         }
     }
 });
+
+window.onresize = () => {
+    const section = document.querySelector("#main-section");
+    if (window.innerWidth <= 1030) {
+        if (section.classList.contains("content-section--grid1-2")) {
+            section.classList.remove("content-section--grid1-2");
+        }
+    } else if (window.innerWidth > 1030) {
+        section.classList.add("content-section--grid1-2");
+    }
+};
