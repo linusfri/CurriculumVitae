@@ -103,3 +103,12 @@ h3 {
     background-color: rgba(30, 30, 30, 1);
     color: white;
 }
+
+@media screen and (max-width: 1030px) {
+    body {
+        padding: 0;
+    }
+    hr {
+        width: 90%;
+    }
+}
