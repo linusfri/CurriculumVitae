@@ -9,6 +9,16 @@ function addGlobalEventListener (type, selector, callback) {
     });
 }
 
+function responsiveWidth () {
+    const section = document.querySelector("#main-section");
+    if (window.innerWidth <= 1030) {
+        if (section.classList.contains("content-section--grid1-2")) {
+            section.classList.remove("content-section--grid1-2");
+        }
+    } else if (window.innerWidth > 1030) {
+        section.classList.add("content-section--grid1-2");
+    }
+}
 addGlobalEventListener("click", "button", e => {
     if (document.body.classList.contains("dark")) {
         document.body.classList.remove("dark");
@@ -24,14 +34,11 @@ addGlobalEventListener("click", "button", e => {
         }
     }
 });
-
-window.onresize = () => {
-    const section = document.querySelector("#main-section");
-    if (window.innerWidth <= 1030) {
-        if (section.classList.contains("content-section--grid1-2")) {
-            section.classList.remove("content-section--grid1-2");
-        }
-    } else if (window.innerWidth > 1030) {
-        section.classList.add("content-section--grid1-2");
+window.onload = () => {
+    if (window.innerWidth < 1030) {
+        responsiveWidth();
     }
+}
+window.onresize = () => {
+    responsiveWidth();
 };
