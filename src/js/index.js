@@ -35,10 +35,11 @@ addGlobalEventListener("click", "button", e => {
     }
 });
 window.onload = () => {
-    if (window.innerWidth < 1030) {
+    if (window.innerWidth <= 1030) {
         responsiveWidth();
     }
-}
+};
+
 window.onresize = () => {
     responsiveWidth();
 };
